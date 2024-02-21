@@ -1,0 +1,18 @@
+<nav class="navbar" style="background-color: #e3f2fd;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">AirPnP</a>
+    <%= link_to "Add new flat", new_flat_path, class: "btn btn-sm btn-outline-secondary" %>
+  </div>
+</nav>
+<div class="container">
+<h1>All our flats (<%= @flats.count %>)</h1>
+    <% @flats.each do |flat| %>
+  <div class="card my-3 mx-3 d-inline-flex" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= flat.name %></h5>
+    <p class="card-text"><%= flat.address %></p>
+    <%= link_to "more info", flat_path(flat["id"]), class: "btn btn-primary"%></a>
+  </div>
+</div>
+<% end %>
+</div>
